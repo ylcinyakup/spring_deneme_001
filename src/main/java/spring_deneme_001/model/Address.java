@@ -20,7 +20,6 @@ public class Address implements Serializable {
 	private String address;
 
 	@ManyToOne
-	@JoinColumn(name = "user_id")
 	private User user;
 
 	public Address() {

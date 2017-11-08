@@ -20,7 +20,6 @@ public class PhoneNumber implements Serializable {
 	private String phoneNumber;
 
 	@ManyToOne
-	@JoinColumn(name = "user_id")
 	private User user;
 
 	public PhoneNumber() {

@@ -1,6 +1,7 @@
 package spring_deneme_001.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -24,11 +25,13 @@ public class User implements Serializable {
 
 	private String email;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-	private Set<Address> addresses;
+    @OneToMany( cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+	private Set<Address> addresses = new HashSet<Address>();
     
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-   	private Set<PhoneNumber> phoneNumbers;
+    @OneToMany( cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+   	private Set<PhoneNumber> phoneNumbers = new HashSet<PhoneNumber>();
 
 	public User() {
 
